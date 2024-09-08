@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "051c72bc-1ebf-4f86-a766-2381f06efd83",
+		"name": "Pet_store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34820761"
+	},
+	"item": [
+		{
+			"name": "Creates list of users with given input array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"message\");",
+							"});",
+							"pm.test(\"Response time is less than 10 seconds\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000); // 10 секунд в миллисекундах",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 912924,\n    \"username\": \"{{username}}\",\n    \"firstName\": \"Victor\",\n    \"lastName\": \"Karlov\",\n    \"email\": \"Victor@mail.ru\",\n    \"password\": \"1234567\",\n    \"phone\": \"89996877412\",\n    \"userStatus\": 0\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/createWithList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"createWithList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by user name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});",
+							"pm.test(\"Response time is less than 10 seconds\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000); // 10 секунд в миллисекундах",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/user/{{username}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updated user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"message\");",
+							"});",
+							"pm.test(\"Response time is less than 10 seconds\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000); // 10 секунд в миллисекундах",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 12344,\n  \"username\": \"Piter_Pen\",\n  \"firstName\": \"Peter\",\n  \"lastName\": \"Yasnezov\",\n  \"email\": \"Peter@mail.ru\",\n  \"password\": \"1234567\",\n  \"phone\": \"89728834526\",\n  \"userStatus\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/{{username}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"message\");",
+							"});",
+							"pm.test(\"Response time is less than 10 seconds\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000); // 10 секунд в миллисекундах",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/user/{{username}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

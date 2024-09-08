@@ -1,0 +1,48 @@
+C:\Users\Виктор\Final-Project\postman>newman run Pet_store.postman_collection.json -e pet.postman_environment.json
+newman
+
+Pet_store
+
+→ Creates list of users with given input array
+  POST https://petstore.swagger.io/v2/user/createWithList [200 OK, 370B, 606ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 10 seconds
+
+→ Get user by user name
+  GET https://petstore.swagger.io/v2/user/Peter_Pen [200 OK, 486B, 129ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 10 seconds
+
+→ Updated user
+  PUT https://petstore.swagger.io/v2/user/Peter_Pen [200 OK, 373B, 131ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 10 seconds
+
+→ Delete user
+  DELETE https://petstore.swagger.io/v2/user/Peter_Pen [200 OK, 377B, 129ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 10 seconds
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   4 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                   4 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   0 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  12 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 1377ms                                         │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 302B (approx)                                 │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 248ms [min: 129ms, max: 606ms, s.d.: 206ms] │
+└────────────────────────────────────────────────────────────────────┘
