@@ -23,10 +23,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: start script
-        run: bash ./bash_script/backup.sh ./Data_base.sh
+        run: bash ./bash_script/backup.sh ./sql/Data_base.sh
   second_jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Start second script
-        run: bash backup_description.sh ./cmd_run_collection.txt
+        run: bash ./bash_script/backup_description.sh ./postman/cmd_run_collection.txt
