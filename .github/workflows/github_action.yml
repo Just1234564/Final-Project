@@ -29,4 +29,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Start second script
-        run: bash ./bash_script/backup_description.sh ./postman/cmd_run_collection.txt
+        run: bash ./sql/script.sh
