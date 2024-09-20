@@ -12,7 +12,7 @@ on:
 
 
 jobs:
-  first step start script:
+  first_step_start_script:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
           echo test, and deploy your project.
       - name: start script
         run: sh backup.sh
-  second jobs:
+  second_jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
