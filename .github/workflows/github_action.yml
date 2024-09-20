@@ -23,7 +23,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: start script
-        run: sh backup.sh
+        run: sh ./bash_script/backup.sh
   second_jobs:
     runs-on: ubuntu-latest
     steps:
